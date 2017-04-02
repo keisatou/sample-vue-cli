@@ -1,19 +1,22 @@
 <template>
-  <p>Server Stataus: {{ status }}</p>
-  <hr>
-  <button>
-    button
+  <div>
+    <p>Server Stataus: {{ status }}</p>
+    <hr>
+    <button @click="changeStatus">Change Status</button>
+  </div>
 </template>
 
 <script>
 export default {
-  data: function() {
+  data() {
     return {
-      status: 'Critical'
-    }
-  }
-}
+      status: 'Critical',
+    };
+  },
+  methods: {
+    changeStatus() {
+      this.status = 'Normal';
+    },
+  },
+};
 </script>
-
-<style>
-</style>
